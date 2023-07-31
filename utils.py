@@ -8,3 +8,10 @@ def median(data):
 
 def mean(data):
     return sum(data)/len(data)
+
+def trimmed_mean(data, trim_perc):
+    trimmed_data = []
+    trim = int(len(data) * trim_perc/100)
+    for i in range(trim, len(data)-trim):
+        trimmed_data.append(data[i])
+    return mean(trimmed_data)
