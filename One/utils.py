@@ -2,7 +2,9 @@ def median(data):
     n = len(data)
     sorted_data = sorted(data)
     if n % 2 == 0:
-        return (sorted_data[n//2] + sorted_data[n//2 + 1])/2
+        m1 = sorted_data[n//2-1]
+        m2 = sorted_data[n//2]
+        return (m1 + m2)/2
     else:
         return sorted_data[n//2]
 
