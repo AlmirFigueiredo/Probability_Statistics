@@ -12,8 +12,9 @@ def mean(data):
     return sum(data)/len(data)
 
 def trimmed_mean(data, trim_perc):
-    trimmed_data = []
-    trim = int(len(data) * trim_perc/100)
-    for i in range(trim, len(data)-trim):
-        trimmed_data.append(data[i])
-    return mean(trimmed_data)
+    data_sorted = sorted(data)
+    quantity_to_exclude = int(len(data)*trim_perc/100)
+    trim_init = quantity_to_exclude
+    trim_final = len(data)-quantity_to_exclude
+    trimmed_data = data_sorted[trim_init : trim_final]
+    return sum(trimmed_data)/len(trimmed_data)
